@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Videos
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Generated files
+runs/
+outputs/
+
+# Environment
+.env
+.venv/
+venv/
+
+# VS Code
+.vscode/

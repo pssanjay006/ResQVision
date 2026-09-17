@@ -1,0 +1,32 @@
+# ResQVision MVP - Python dependencies
+# Python 3.13 verified. Install with:  pip install -r requirements.txt
+#
+# ---------------------------------------------------------------------------
+# IMPORTANT - GPU USERS: install the CUDA build of PyTorch FIRST.
+# Plain `pip install torch` gives you the CPU-only wheel on Windows, and the
+# pipeline would then silently run in FP32 on CPU instead of FP16 on the GPU.
+#
+#   CUDA 12.4 (Windows / Linux):
+#     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#   CPU only:
+#     pip install torch torchvision
+#
+# Verify afterwards:  python -c "import torch; print(torch.cuda.is_available())"
+# ---------------------------------------------------------------------------
+
+# >= 8.3.100 is required: torch 2.6+ flipped torch.load() to weights_only=True,
+# which makes older Ultralytics releases fail to load .pt checkpoints.
+ultralytics>=8.3.100
+
+# Video / frame I/O.
+opencv-python>=4.10.0
+
+# Dashboard.
+streamlit>=1.36.0
+pandas>=2.0.0
+
+# Overpass lookup for the nearest hospital / police station.
+requests>=2.31.0
+
+# Downloads the Hugging Face weights on first run.
+huggingface_hub>=0.23.0
